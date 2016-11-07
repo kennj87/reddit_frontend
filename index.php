@@ -66,7 +66,7 @@
                             <li><a class="menu-top" href="index.php?page=subreddits">Subreddits</a></li>
                             <li><a class="menu-top" href="index.php?page=users">Users</a></li>
                             <li><a class="menu-top" href="#">Image-Search</a></li>
-                            <li><a class="menu-top" href="#">(Status)</a></li>
+                            <li><a class="menu-top" href="index.php?page=status">(Status)</a></li>
                         </ul>
                     </div>
                 </div>

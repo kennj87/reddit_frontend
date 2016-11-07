@@ -161,3 +161,18 @@ function get_link_page_info($pdo,$id) {
         echo "<tr><td>".gmdate("H:i:s d-m-y", $timestamp)."</td><td>".$row['author']."</td><td>".$row['subreddit']."</td><td><a href='".$row['permalink']."'>".substr($row['permalink'],0,70)."</a></td>";
     }
 }
+
+/*
+ Display controller status
+ */
+
+function get_controller_status($pdo) {
+    $sql = "SELECT * from controller";
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    $result = $statement->fetchAll();
+    foreach($result as $row){
+        $timestamp = $row['next_run'];
+        echo "<tr><td>".$row['function']."</td><td>".$row['update_time']."</td><td>".gmdate("H:i:s d-m-y", $timestamp)."</td><td>".$row['runtime']."</td>";
+    }
+}
