@@ -13,6 +13,7 @@
                                 <td><b>Function</b></td>
                                 <td><b>Update time</b></td>
                                 <td><b>Next run</b></td>
+                                <td><b>Status</b></td>
                                 <td><b>Runtime</b></td>
                                 </thead>
                                 <tbody>

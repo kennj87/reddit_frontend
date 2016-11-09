@@ -60,7 +60,7 @@ users
 // Prepare the paged query
                                     $stmt = $pdo->prepare('
                                     SELECT
-                                    ID,name,posts,created
+                                    name,posts,created
                                     FROM
                                     users
                                     ORDER BY

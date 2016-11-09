@@ -66,12 +66,12 @@ function last_hour_posts($pdo) {
 
 function last_hour_subreddits($pdo) {
     $t = time() - 3600;
-    return single_query("SELECT COUNT(ID) as q FROM subreddit WHERE created > '$t'",$pdo);
+    return single_query("SELECT COUNT(posts) as q FROM subreddit WHERE created > '$t'",$pdo);
 }
 
 function last_hour_users($pdo) {
     $t = time() - 3600;
-    return single_query("SELECT COUNT(ID) as q FROM users WHERE created > '$t'",$pdo);
+    return single_query("SELECT COUNT(posts) as q FROM users WHERE created > '$t'",$pdo);
 }
 
 function last_hour_reposts($pdo) {
@@ -90,12 +90,12 @@ function last_10min_posts($pdo) {
 
 function last_10min_subreddits($pdo) {
     $t = time() - 600;
-    return single_query("SELECT COUNT(ID) as q FROM subreddit WHERE created > '$t'",$pdo);
+    return single_query("SELECT COUNT(posts) as q FROM subreddit WHERE created > '$t'",$pdo);
 }
 
 function last_10min_users($pdo) {
     $t = time() - 600;
-    return single_query("SELECT COUNT(ID) as q FROM users WHERE created > '$t'",$pdo);
+    return single_query("SELECT COUNT(posts) as q FROM users WHERE created > '$t'",$pdo);
 }
 
 function last_10min_reposts($pdo) {
@@ -114,12 +114,12 @@ function last_24hour_posts($pdo) {
 
 function last_24hour_subreddits($pdo) {
     $t = time() - 86400;
-    return single_query("SELECT COUNT(ID) as q FROM subreddit WHERE created > '$t'",$pdo);
+    return single_query("SELECT COUNT(posts) as q FROM subreddit WHERE created > '$t'",$pdo);
 }
 
 function last_24hour_users($pdo) {
     $t = time() - 86400;
-    return single_query("SELECT COUNT(ID) as q FROM users WHERE created > '$t'",$pdo);
+    return single_query("SELECT COUNT(posts) as q FROM users WHERE created > '$t'",$pdo);
 }
 
 function last_24hour_reposts($pdo) {
@@ -173,6 +173,6 @@ function get_controller_status($pdo) {
     $result = $statement->fetchAll();
     foreach($result as $row){
         $timestamp = $row['next_run'];
-        echo "<tr><td>".$row['function']."</td><td>".$row['update_time']."</td><td>".gmdate("H:i:s d-m-y", $timestamp)."</td><td>".$row['runtime']."</td>";
+        echo "<tr><td>".$row['function']."</td><td>".$row['update_time']."</td><td>".gmdate("H:i:s d-m-y", $timestamp)."</td><td>".$row['status']."</td><td>".$row['runtime']."</td>";
     }
 }

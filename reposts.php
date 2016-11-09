@@ -61,7 +61,7 @@ post_reposts
 // Prepare the paged query
                                     $stmt = $pdo->prepare('
                                     SELECT
-                                    ID,url,author,repost_count,post_id
+                                    url,author,repost_count,post_id
                                     FROM
                                     post_reposts
                                     ORDER BY

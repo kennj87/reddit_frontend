@@ -61,7 +61,7 @@ subreddit
 // Prepare the paged query
                                     $stmt = $pdo->prepare('
                                     SELECT
-                                    ID,subreddit,posts,most_active_user,created
+                                    subreddit,posts,most_active_user,created
                                     FROM
                                     subreddit
                                     ORDER BY
